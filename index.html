@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineCoffee Rewards — Giveaway & Review Hub</title>
+    <title>Review by Fawaz — Giveaway & Review Hub</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Plus Jakarta Sans -->
@@ -40,32 +40,16 @@
         }
     </script>
     <style>
-        /* Custom scrollbar & subtle animations */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(156, 163, 175, 0.4);
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(156, 163, 175, 0.6);
-        }
-        .glass-card {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.4); border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(156, 163, 175, 0.6); }
+        .glass-card { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-6px); }
         }
-        .animate-float {
-            animation: floatSlow 4s ease-in-out infinite;
-        }
+        .animate-float { animation: floatSlow 4s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden pb-20 md:pb-0">
@@ -76,14 +60,14 @@
     <!-- Navigation Bar -->
     <header class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-950/90 glass-card">
         <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
-            <!-- Brand Logo (Mendukung Custom Upload Logo Judul) -->
+            <!-- Brand Logo -->
             <a href="#" onclick="switchView('user')" class="flex items-center gap-2.5 group min-w-0">
                 <div id="brand-logo-container" class="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-rose-600 via-amber-500 to-rose-700 flex items-center justify-center text-white shadow-lg shadow-rose-500/25 group-hover:scale-105 transition-transform overflow-hidden">
                     <i data-lucide="ticket" class="w-5 h-5"></i>
                 </div>
                 <div class="truncate">
                     <span id="brand-title-text" class="font-display font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-rose-600 to-amber-600 dark:from-rose-400 dark:to-amber-400 bg-clip-text text-transparent block truncate">
-                        CineCoffee
+                        Review by Fawaz
                     </span>
                     <span id="brand-subtitle-text" class="block text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 -mt-0.5 truncate">
                         Giveaway & Undian Review
@@ -101,13 +85,11 @@
 
             <!-- Action Controls -->
             <div class="flex items-center gap-2 shrink-0">
-                <!-- Theme Toggle -->
                 <button id="theme-toggle" aria-label="Ganti Tema" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-900 hover:bg-slate-200/70 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">
                     <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
                     <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
                 </button>
 
-                <!-- Switch View / Admin Button -->
                 <button id="nav-admin-btn" onclick="handleAdminButtonClick()" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 shadow-sm transition-all">
                     <i data-lucide="shield-check" class="w-4 h-4 text-rose-500 shrink-0"></i>
                     <span id="nav-admin-label">Admin</span>
@@ -116,7 +98,7 @@
         </div>
     </header>
 
-    <!-- Mobile Bottom Quick Navigation Bar (Khusus Tampilan HP) -->
+    <!-- Mobile Bottom Quick Navigation Bar -->
     <nav id="mobile-bottom-nav" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-950/95 border-t border-slate-200 dark:border-slate-800 glass-card px-2 py-1.5">
         <div class="grid grid-cols-4 gap-1 text-center">
             <a href="#hadiah" class="flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-600 dark:text-slate-300 active:bg-slate-100 dark:active:bg-slate-900">
@@ -139,16 +121,14 @@
     </nav>
 
     <!-- =====================================================================
-         VIEW 1: USER VIEW (HALAMAN UTAMA PESERTA GIVEAWAY)
+         VIEW 1: USER VIEW
     ===================================================================== -->
     <main id="user-view" class="flex-1">
         <!-- Hero Section -->
         <section class="relative overflow-hidden pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24">
-            <!-- Decorative Background Blurs -->
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-gradient-to-tr from-rose-500/15 via-amber-500/15 to-purple-500/10 blur-3xl -z-10 rounded-full"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- Hero Brand Badge / Logo Preview jika ada -->
                 <div id="hero-logo-wrapper" class="hidden justify-center mb-5">
                     <img id="hero-brand-img" src="" alt="Logo Brand" class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl object-cover border-4 border-white dark:border-slate-800 shadow-xl animate-float">
                 </div>
@@ -158,7 +138,7 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
                     </span>
-                    Sistem Undian Resmi — Dapatkan Nomor Undianmu!
+                    Review by Fawaz — Dapatkan Nomor Undianmu!
                 </div>
 
                 <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.18]">
@@ -202,7 +182,7 @@
             </div>
         </section>
 
-        <!-- Daftar Hadiah Section (Mendukung Foto / Logo Custom untuk Setiap Hadiah) -->
+        <!-- Daftar Hadiah Section -->
         <section id="hadiah" class="py-12 sm:py-16 bg-slate-100/70 dark:bg-slate-900/40 border-y border-slate-200/70 dark:border-slate-800/70">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
@@ -334,13 +314,13 @@
                             </p>
 
                             <div class="mt-5 space-y-2.5">
-                                <a id="link-tiktok" href="https://tiktok.com" target="_blank" onclick="markSocialClicked('tiktok')" class="flex items-center justify-between p-3 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500 bg-slate-50/70 dark:bg-slate-950/60 transition-all group">
+                                <a id="link-tiktok" href="https://tiktok.com/@jastiporderfwzindonesia" target="_blank" onclick="markSocialClicked('tiktok')" class="flex items-center justify-between p-3 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500 bg-slate-50/70 dark:bg-slate-950/60 transition-all group">
                                     <div class="flex items-center gap-3">
                                         <div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center">
                                             <i data-lucide="music-2" class="w-4 h-4"></i>
                                         </div>
                                         <div>
-                                            <div class="text-xs font-bold" id="label-tiktok">@cinecoffee.official</div>
+                                            <div class="text-xs font-bold" id="label-tiktok">Ikuti akun TikTok</div>
                                             <div class="text-[11px] text-slate-500">TikTok Official</div>
                                         </div>
                                     </div>
@@ -374,13 +354,13 @@
                             </p>
 
                             <div class="mt-5 space-y-2.5">
-                                <a id="link-grup" href="https://chat.whatsapp.com" target="_blank" onclick="markSocialClicked('grup')" class="flex items-center justify-between p-3 rounded-2xl border border-emerald-200 dark:border-emerald-800/70 hover:border-emerald-500 bg-emerald-50/70 dark:bg-emerald-950/30 transition-all">
+                                <a id="link-grup" href="https://chat.whatsapp.com/IAJEX76BnqB33SSI4sgK83" target="_blank" onclick="markSocialClicked('grup')" class="flex items-center justify-between p-3 rounded-2xl border border-emerald-200 dark:border-emerald-800/70 hover:border-emerald-500 bg-emerald-50/70 dark:bg-emerald-950/30 transition-all">
                                     <div class="flex items-center gap-3">
                                         <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center">
                                             <i data-lucide="users" class="w-4 h-4"></i>
                                         </div>
                                         <div>
-                                            <div class="text-xs font-bold text-emerald-950 dark:text-emerald-100" id="label-grup">Gabung Grup WhatsApp (WA)</div>
+                                            <div class="text-xs font-bold text-emerald-950 dark:text-emerald-100" id="label-grup">Gabung Grup</div>
                                             <div class="text-[11px] text-emerald-700 dark:text-emerald-400">Klik untuk masuk Grup WA</div>
                                         </div>
                                     </div>
@@ -389,13 +369,13 @@
                                     </span>
                                 </a>
 
-                                <a id="link-saluran" href="https://whatsapp.com/channel" target="_blank" onclick="markSocialClicked('saluran')" class="flex items-center justify-between p-3 rounded-2xl border border-teal-200 dark:border-teal-800/70 hover:border-teal-500 bg-teal-50/70 dark:bg-teal-950/30 transition-all">
+                                <a id="link-saluran" href="https://whatsapp.com/channel/0029VbCeTBnJENy8JANwFV2X" target="_blank" onclick="markSocialClicked('saluran')" class="flex items-center justify-between p-3 rounded-2xl border border-teal-200 dark:border-teal-800/70 hover:border-teal-500 bg-teal-50/70 dark:bg-teal-950/30 transition-all">
                                     <div class="flex items-center gap-3">
                                         <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center">
                                             <i data-lucide="radio" class="w-4 h-4"></i>
                                         </div>
                                         <div>
-                                            <div class="text-xs font-bold text-teal-950 dark:text-teal-100" id="label-saluran">Ikuti Saluran WhatsApp (WA)</div>
+                                            <div class="text-xs font-bold text-teal-950 dark:text-teal-100" id="label-saluran">Ikuti Saluran</div>
                                             <div class="text-[11px] text-teal-700 dark:text-teal-400">Klik untuk ikuti Saluran WA</div>
                                         </div>
                                     </div>
@@ -404,7 +384,6 @@
                                     </span>
                                 </a>
 
-                                <!-- Tombol Salin Pesan Ajak Teman -->
                                 <button type="button" onclick="copyInviteMessage()" class="w-full flex items-center justify-center gap-2 p-3 rounded-2xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-bold transition-all">
                                     <i data-lucide="share-2" class="w-4 h-4"></i>
                                     Salin Pesan Undangan WA (Ajak Teman)
@@ -472,7 +451,6 @@
                     </div>
 
                     <form id="giveaway-form" onsubmit="handleFormSubmit(event)" class="mt-8 space-y-6">
-                        <!-- Quick Access Strip untuk Grup WA & Saluran WA di dalam Form -->
                         <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div class="flex items-start sm:items-center gap-2.5">
                                 <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5 sm:mt-0"></i>
@@ -481,16 +459,15 @@
                                 </div>
                             </div>
                             <div class="flex flex-wrap items-center gap-2 shrink-0">
-                                <a id="form-link-grup" href="https://chat.whatsapp.com" target="_blank" onclick="markSocialClicked('grup')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors">
+                                <a id="form-link-grup" href="https://chat.whatsapp.com/IAJEX76BnqB33SSI4sgK83" target="_blank" onclick="markSocialClicked('grup')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors">
                                     <i data-lucide="users" class="w-3.5 h-3.5"></i> Grup WA
                                 </a>
-                                <a id="form-link-saluran" href="https://whatsapp.com/channel" target="_blank" onclick="markSocialClicked('saluran')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-colors">
+                                <a id="form-link-saluran" href="https://whatsapp.com/channel/0029VbCeTBnJENy8JANwFV2X" target="_blank" onclick="markSocialClicked('saluran')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-colors">
                                     <i data-lucide="radio" class="w-3.5 h-3.5"></i> Saluran WA
                                 </a>
                             </div>
                         </div>
 
-                        <!-- Row 1: Nama & No WhatsApp -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label for="input-name" class="block text-sm font-semibold mb-2">Nama Lengkap <span class="text-rose-500">*</span></label>
@@ -510,11 +487,9 @@
                             </div>
                         </div>
 
-                        <!-- Row 2: Rating & Review -->
                         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 space-y-4">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                                 <label class="text-sm font-semibold">Berikan Rating & Tulis Review Kamu <span class="text-rose-500">*</span></label>
-                                <!-- Interactive Star Rating -->
                                 <div class="flex items-center gap-1" id="star-rating-container">
                                     <button type="button" onclick="setRating(1)" class="star-btn p-1 text-amber-400 hover:scale-110 transition-transform" data-star="1"><i data-lucide="star" class="w-6 h-6 fill-amber-400"></i></button>
                                     <button type="button" onclick="setRating(2)" class="star-btn p-1 text-amber-400 hover:scale-110 transition-transform" data-star="2"><i data-lucide="star" class="w-6 h-6 fill-amber-400"></i></button>
@@ -527,11 +502,11 @@
                             </div>
 
                             <div>
-                                <textarea id="input-review" rows="3" required minlength="15" placeholder="Tulis pengalaman, ulasan, atau kesan kamu tentang layanan, promo film CGV, Kopi Kenangan, atau komunitas kami di sini..." class="w-full p-3.5 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none text-sm transition-all"></textarea>
+                                <textarea id="input-review" rows="3" required minlength="15" placeholder="Tulis pengalaman, ulasan, atau kesan kamu tentang layanan, promo film CGV, Kopi Kenangan, atau komunitas Review by Fawaz di sini..." class="w-full p-3.5 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none text-sm transition-all"></textarea>
                             </div>
                         </div>
 
-                        <!-- Row 4: Upload 3 Bukti Screenshot -->
+                        <!-- Upload 3 Bukti Screenshot -->
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <label class="text-sm font-semibold">Upload Bukti Screenshot Persyaratan (3 Slot Wajib) <span class="text-rose-500">*</span></label>
@@ -539,7 +514,6 @@
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <!-- Slot 1: Bukti Follow -->
                                 <div class="relative border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-rose-500 dark:hover:border-rose-500 rounded-2xl p-4 text-center bg-slate-50/60 dark:bg-slate-950/60 transition-all">
                                     <input type="file" id="file-follow" accept="image/*" required onchange="handleImageUpload(event, 'follow')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
                                     <div id="preview-container-follow" class="flex flex-col items-center justify-center min-h-[130px]">
@@ -552,7 +526,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Slot 2: Bukti Gabung Grup WA & Saluran WA -->
                                 <div class="relative border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 rounded-2xl p-4 text-center bg-slate-50/60 dark:bg-slate-950/60 transition-all">
                                     <input type="file" id="file-group" accept="image/*" required onchange="handleImageUpload(event, 'group')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
                                     <div id="preview-container-group" class="flex flex-col items-center justify-center min-h-[130px]">
@@ -565,7 +538,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Slot 3: Bukti Ajak Teman -->
                                 <div class="relative border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-500 rounded-2xl p-4 text-center bg-slate-50/60 dark:bg-slate-950/60 transition-all">
                                     <input type="file" id="file-invite" accept="image/*" required onchange="handleImageUpload(event, 'invite')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
                                     <div id="preview-container-invite" class="flex flex-col items-center justify-center min-h-[130px]">
@@ -580,7 +552,6 @@
                             </div>
                         </div>
 
-                        <!-- Agreement Checkbox -->
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="input-agree" required class="mt-1 w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-slate-300 dark:border-slate-700">
                             <label for="input-agree" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -588,8 +559,7 @@
                             </label>
                         </div>
 
-                        <!-- Submit Button -->
-                        <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-700 hover:to-amber-600 text-white font-display font-bold text-base shadow-lg shadow-rose-500/25 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
+                        <button type="submit" id="btn-submit-form" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-700 hover:to-amber-600 text-white font-display font-bold text-base shadow-lg shadow-rose-500/25 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
                             <i data-lucide="ticket" class="w-5 h-5"></i>
                             Kirim Review & Dapatkan Nomor Undian
                         </button>
@@ -615,28 +585,24 @@
                     </div>
                 </div>
 
-                <!-- Grid Review Cards -->
-                <div id="public-reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Diisi secara dinamis via JavaScript -->
-                </div>
+                <div id="public-reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
     </main>
 
     <!-- =====================================================================
-         VIEW 2: ADMIN DASHBOARD VIEW (PANEL VERIFIKASI & PENGATURAN)
+         VIEW 2: ADMIN DASHBOARD VIEW
     ===================================================================== -->
     <main id="admin-view" class="hidden flex-1 py-8 bg-slate-100/60 dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Admin Header -->
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
                 <div>
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 mb-2">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Mode Administrator Aktif
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Mode Administrator Aktif (Cloud Sync)
                     </span>
                     <h1 class="font-display text-2xl sm:text-3xl font-extrabold">Dashboard Verifikasi & Undian</h1>
                     <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        Verifikasi bukti screenshot peserta, lalu lakukan pengundian acak untuk menentukan pemenang hadiah!
+                        Semua data peserta, perubahan judul, logo, dan link WA langsung tersinkronisasi ke Cloud untuk semua perangkat!
                     </p>
                 </div>
 
@@ -656,7 +622,7 @@
                 </div>
             </div>
 
-            <!-- Admin Tabs Navigation (Scrollable horizontal di HP) -->
+            <!-- Admin Tabs Navigation -->
             <div class="flex items-center gap-1 sm:gap-2 mt-6 border-b border-slate-200 dark:border-slate-800 overflow-x-auto whitespace-nowrap pb-px">
                 <button id="tab-btn-participants" onclick="switchAdminTab('participants')" class="px-3.5 sm:px-4 py-3 text-xs sm:text-sm font-bold border-b-2 border-rose-600 text-rose-600 dark:text-rose-400 flex items-center gap-2 shrink-0">
                     <i data-lucide="users" class="w-4 h-4"></i>
@@ -678,7 +644,6 @@
 
             <!-- TAB 1: DATA PESERTA & VERIFIKASI -->
             <div id="admin-tab-participants" class="mt-6 space-y-6">
-                <!-- Summary Cards -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
                         <div class="flex items-center justify-between">
@@ -723,7 +688,6 @@
 
                 <!-- Filter & Search Bar -->
                 <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-                    <!-- Status Filter Pills -->
                     <div class="flex flex-wrap items-center gap-2" id="admin-filter-pills">
                         <button onclick="setAdminFilter('all')" data-filter="all" class="filter-pill px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 transition-all">
                             Semua
@@ -739,23 +703,18 @@
                         </button>
                     </div>
 
-                    <!-- Search Input -->
                     <div class="relative w-full md:w-72">
                         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
                         <input type="text" id="admin-search-input" oninput="renderAdminList()" placeholder="Cari no. undian, nama, atau no HP..." class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-rose-500">
                     </div>
                 </div>
 
-                <!-- Participants List Container -->
-                <div id="admin-participants-list" class="space-y-4">
-                    <!-- Kartu/baris peserta dirender di sini -->
-                </div>
+                <div id="admin-participants-list" class="space-y-4"></div>
             </div>
 
-            <!-- TAB 2: MESIN UNDIAN PEMENANG (LUCKY DRAW) -->
+            <!-- TAB 2: MESIN UNDIAN PEMENANG -->
             <div id="admin-tab-raffle" class="hidden mt-6 space-y-6">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Panel Kontrol Undian -->
                     <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm">
                         <div class="flex items-center justify-between gap-3 mb-6">
                             <div>
@@ -781,7 +740,6 @@
                                 </select>
                             </div>
 
-                            <!-- Display Kotak Undian -->
                             <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-rose-950 text-white border border-slate-800 text-center relative overflow-hidden">
                                 <div class="text-xs uppercase tracking-widest text-rose-400 font-bold mb-2" id="raffle-stage-label">
                                     Siap Mengundi Nomor Pemenang
@@ -807,7 +765,6 @@
                         </div>
                     </div>
 
-                    <!-- Riwayat Pemenang Undian -->
                     <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
@@ -819,9 +776,7 @@
                                     Reset Riwayat
                                 </button>
                             </div>
-                            <div id="raffle-winners-history" class="mt-4 space-y-3 max-h-[380px] overflow-y-auto pr-1">
-                                <!-- Daftar pemenang dirender di sini -->
-                            </div>
+                            <div id="raffle-winners-history" class="mt-4 space-y-3 max-h-[380px] overflow-y-auto pr-1"></div>
                         </div>
                         <p class="text-[11px] text-slate-400 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
                             Tips: Anda bisa menyalin nomor undian pemenang dan membagikannya ke Grup WA & Saluran WA.
@@ -830,7 +785,7 @@
                 </div>
             </div>
 
-            <!-- TAB 3 (BARU): PENGATURAN LOGO JUDUL & LOGO / FOTO HADIAH -->
+            <!-- TAB 3: PENGATURAN LOGO JUDUL & FOTO HADIAH -->
             <div id="admin-tab-branding" class="hidden mt-6 space-y-6">
                 <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-5 sm:p-8 shadow-sm">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-slate-800">
@@ -838,7 +793,7 @@
                             <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Kustomisasi Visual</span>
                             <h2 class="font-display text-xl sm:text-2xl font-extrabold mt-0.5">Logo Judul Website & Foto Logo Hadiah</h2>
                             <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-                                Upload foto atau logo custom untuk judul website di header/hero serta logo untuk masing-masing 5 hadiah undian.
+                                Semua perubahan logo dan judul otomatis tersimpan ke Cloud dan tampil sama di semua HP peserta.
                             </p>
                         </div>
                         <button type="button" onclick="resetBrandingLogos()" class="w-fit px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
@@ -846,7 +801,6 @@
                         </button>
                     </div>
 
-                    <!-- Bagian 1: Logo & Judul Utama Website -->
                     <div class="mt-6 p-5 rounded-2xl bg-indigo-500/5 border border-indigo-500/20">
                         <h3 class="font-display font-bold text-base flex items-center gap-2 mb-4">
                             <i data-lucide="sparkles" class="w-4 h-4 text-indigo-500"></i>
@@ -854,7 +808,6 @@
                         </h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
-                            <!-- Preview & Upload Logo Judul -->
                             <div class="flex items-center gap-4">
                                 <div id="admin-preview-brandLogo" class="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-600 via-amber-500 to-rose-700 text-white flex items-center justify-center shrink-0 overflow-hidden border-2 border-white dark:border-slate-800 shadow-md">
                                     <i data-lucide="ticket" class="w-8 h-8"></i>
@@ -871,11 +824,10 @@
                                 </div>
                             </div>
 
-                            <!-- Input Nama & Subjudul Brand -->
                             <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold mb-1.5">Judul Website / Nama Brand</label>
-                                    <input type="text" id="set-brand-title" placeholder="Contoh: CineCoffee" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm">
+                                    <input type="text" id="set-brand-title" placeholder="Contoh: Review by Fawaz" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold mb-1.5">Subjudul / Tagline Kecil</label>
@@ -890,7 +842,6 @@
                         </div>
                     </div>
 
-                    <!-- Bagian 2: Upload Foto / Logo 5 Hadiah -->
                     <div class="mt-6">
                         <h3 class="font-display font-bold text-base flex items-center gap-2 mb-4">
                             <i data-lucide="gift" class="w-4 h-4 text-rose-500"></i>
@@ -898,7 +849,6 @@
                         </h3>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <!-- Card Logo Hadiah 1: Tiket CGV -->
                             <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex items-center gap-4">
                                 <div id="admin-preview-cgvTicket" class="w-16 h-16 rounded-2xl bg-rose-500/10 text-rose-600 flex items-center justify-center shrink-0 overflow-hidden border border-slate-200 dark:border-slate-700">
                                     <i data-lucide="clapperboard" class="w-7 h-7"></i>
@@ -915,7 +865,6 @@
                                 </div>
                             </div>
 
-                            <!-- Card Logo Hadiah 2: F&B CGV -->
                             <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex items-center gap-4">
                                 <div id="admin-preview-cgvFnb" class="w-16 h-16 rounded-2xl bg-orange-500/10 text-orange-600 flex items-center justify-center shrink-0 overflow-hidden border border-slate-200 dark:border-slate-700">
                                     <i data-lucide="popcorn" class="w-7 h-7"></i>
@@ -932,7 +881,6 @@
                                 </div>
                             </div>
 
-                            <!-- Card Logo Hadiah 3: Kopi Kenangan -->
                             <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex items-center gap-4">
                                 <div id="admin-preview-kopiKenangan" class="w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0 overflow-hidden border border-slate-200 dark:border-slate-700">
                                     <i data-lucide="coffee" class="w-7 h-7"></i>
@@ -949,7 +897,6 @@
                                 </div>
                             </div>
 
-                            <!-- Card Logo Hadiah 4: Saldo E-Wallet -->
                             <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex items-center gap-4">
                                 <div id="admin-preview-ewallet" class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 overflow-hidden border border-slate-200 dark:border-slate-700">
                                     <i data-lucide="wallet" class="w-7 h-7"></i>
@@ -966,7 +913,6 @@
                                 </div>
                             </div>
 
-                            <!-- Card Logo Hadiah 5: Netflix -->
                             <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex items-center gap-4">
                                 <div id="admin-preview-netflix" class="w-16 h-16 rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center shrink-0 overflow-hidden border border-slate-200 dark:border-slate-700">
                                     <i data-lucide="tv" class="w-7 h-7"></i>
@@ -992,11 +938,10 @@
                 <div class="max-w-3xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm">
                     <h2 class="font-display text-xl font-bold">Pengaturan Akun Sosmed, Grup WA & Saluran WA</h2>
                     <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        Masukkan link undangan <strong>Grup WhatsApp (WA)</strong>, <strong>Saluran WhatsApp (WA)</strong>, dan akun sosial media yang wajib diikuti peserta.
+                        Masukkan link undangan <strong>Grup WhatsApp (WA)</strong>, <strong>Saluran WhatsApp (WA)</strong>, dan akun TikTok yang wajib diikuti peserta.
                     </p>
 
                     <form onsubmit="saveLinkSettings(event)" class="mt-6 space-y-5">
-                        <!-- Grup WA & Saluran WA di bagian atas agar mudah diatur -->
                         <div class="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 space-y-4">
                             <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i> Tautan WhatsApp Wajib
@@ -1026,18 +971,7 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold mb-1.5">Username Instagram</label>
-                                <input type="text" id="set-ig-label" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold mb-1.5">URL Link Instagram</label>
-                                <input type="url" id="set-ig-url" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold mb-1.5">Username TikTok</label>
+                                <label class="block text-xs font-bold mb-1.5">Label Tombol TikTok</label>
                                 <input type="text" id="set-tiktok-label" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm">
                             </div>
                             <div>
@@ -1064,7 +998,7 @@
     <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
             <div class="flex items-center gap-2">
-                <span class="font-display font-bold text-slate-800 dark:text-slate-200">CineCoffee Rewards</span>
+                <span id="footer-brand-title" class="font-display font-bold text-slate-800 dark:text-slate-200">Review by Fawaz</span>
                 <span>•</span>
                 <span>Platform Giveaway & Review Komunitas</span>
             </div>
@@ -1074,9 +1008,7 @@
         </div>
     </footer>
 
-    <!-- =====================================================================
-         MODAL 1: ADMIN PIN LOGIN
-    ===================================================================== -->
+    <!-- MODAL 1: ADMIN PIN LOGIN -->
     <div id="admin-login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-sm w-full p-6 shadow-2xl transform transition-all">
             <div class="flex items-center justify-between mb-4">
@@ -1103,9 +1035,7 @@
         </div>
     </div>
 
-    <!-- =====================================================================
-         MODAL 2: LIGHTBOX PREVIEW SCREENSHOT BUKTI
-    ===================================================================== -->
+    <!-- MODAL 2: LIGHTBOX PREVIEW SCREENSHOT BUKTI -->
     <div id="lightbox-modal" onclick="closeLightbox()" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/85 backdrop-blur-md p-4">
         <div onclick="event.stopPropagation()" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
@@ -1123,12 +1053,9 @@
         </div>
     </div>
 
-    <!-- =====================================================================
-         MODAL 3: TIKET NOMOR UNDIAN DIGITAL (SETELAH PESERTA MENDAFTAR)
-    ===================================================================== -->
+    <!-- MODAL 3: TIKET NOMOR UNDIAN DIGITAL -->
     <div id="raffle-ticket-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl transform transition-all">
-            <!-- Header Gradient Ticket -->
             <div class="bg-gradient-to-r from-rose-600 via-amber-500 to-rose-600 p-6 text-center text-white relative">
                 <button onclick="closeRaffleTicketModal()" class="absolute top-4 right-4 p-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors">
                     <i data-lucide="x" class="w-4 h-4"></i>
@@ -1140,7 +1067,6 @@
                 <p class="text-xs text-white/90 mt-1">Simpan atau screenshot Nomor Undian kamu di bawah ini:</p>
             </div>
 
-            <!-- Ticket Body -->
             <div class="p-6 space-y-5">
                 <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border-2 border-dashed border-rose-500/40 text-center">
                     <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400">Nomor Undian Resmi Kamu</span>
@@ -1181,18 +1107,21 @@
     </div>
 
     <!-- =====================================================================
-         JAVASCRIPT LOGIC (STATE, STORAGE, UI RENDERING, VALIDATION)
+         JAVASCRIPT LOGIC (CLOUD FIREBASE SYNC — REVIEW BY FAWAZ)
     ===================================================================== -->
     <script>
-        // --- 1. KONFIGURASI DEFAULT & DATA DUMMY AWAL ---
-        const STORAGE_KEY_SUBMISSIONS = 'cinecoffee_giveaway_raffle_v2';
-        const STORAGE_KEY_SETTINGS = 'cinecoffee_giveaway_settings_v2';
-        const STORAGE_KEY_WINNERS = 'cinecoffee_giveaway_winners_v2';
-        const STORAGE_KEY_BRANDING = 'cinecoffee_giveaway_branding_v1';
+        // --- 1. KONFIGURASI CLOUD & PIN OWNER ---
+        // Tempelkan URL Realtime Database Firebase Anda di bawah ini agar semua HP & Laptop tersinkronisasi:
+        const FIREBASE_DB_URL = 'https://reward-by-fawaz-default-rtdb.asia-southeast1.firebasedatabase.app/';
         const ADMIN_PIN = '310708';
 
+        const STORAGE_KEY_SUBMISSIONS = 'reviewbyfawaz_giveaway_raffle_v1';
+        const STORAGE_KEY_SETTINGS = 'reviewbyfawaz_giveaway_settings_v1';
+        const STORAGE_KEY_WINNERS = 'reviewbyfawaz_giveaway_winners_v1';
+        const STORAGE_KEY_BRANDING = 'reviewbyfawaz_giveaway_branding_v1';
+
         const defaultBranding = {
-            brandTitle: 'CineCoffee',
+            brandTitle: 'Review by Fawaz',
             brandSubtitle: 'Giveaway & Undian Review',
             logos: {
                 brandLogo: null,
@@ -1213,76 +1142,53 @@
             saluranUrl: 'https://whatsapp.com/channel/0029VbCeTBnJENy8JANwFV2X'
         };
 
-        // Helper membuat gambar dummy SVG placeholder untuk contoh awal
-        function createDummyScreenshot(title, subtitle, colorHex) {
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="540" viewBox="0 0 400 540">
-                <rect width="400" height="540" fill="#0f172a"/>
-                <rect x="24" y="24" width="352" height="492" rx="24" fill="#1e293b" stroke="${colorHex}" stroke-width="3"/>
-                <circle cx="200" cy="180" r="44" fill="${colorHex}" fill-opacity="0.2"/>
-                <path d="M182 180 l14 14 l26 -28" stroke="${colorHex}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <text x="200" y="275" font-family="sans-serif" font-size="20" font-weight="bold" fill="#f8fafc" text-anchor="middle">${title}</text>
-                <text x="200" y="310" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">${subtitle}</text>
-                <rect x="90" y="360" width="220" height="36" rx="18" fill="${colorHex}"/>
-                <text x="200" y="383" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">BUKTI TERLAMPIR</text>
-            </svg>`;
-            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-        }
-
-        const initialDummySubmissions = [
-            {
-                id: 'UND-8492',
-                name: 'Nadia',
-                phone: '081298765432',
-                rating: 5,
-                review: 'Sering banget dapet info promo tiket CGV sama Kopi Kenangan di saluran WA ini! Adminnya ramah, syarat gampang, semoga nomor undian aku tembus!',
-                status: 'verified',
-                submittedAt: 'Hari ini, 14:20',
-                screenshots: {
-                    follow: createDummyScreenshot('Bukti Follow Akun', 'TikTok Official Followed', '#e11d48'),
-                    group: createDummyScreenshot('Bukti Grup & Saluran WA', 'Joined WA Group & Channel', '#10b981'),
-                    invite: createDummyScreenshot('Bukti Ajak Teman', '3 Teman Bergabung ke WA', '#f59e0b')
-                }
-            },
-            {
-                id: 'UND-3107',
-                name: 'Dimas putra',
-                phone: '085712349876',
-                rating: 5,
-                review: 'Mantap banget giveaway-nya lengkap dari tiket bioskop, popcorn, kopi kenangan sampai saldo e-wallet dan Netflix. Sudah ajak teman sekantor buat ikutan!',
-                status: 'pending',
-                submittedAt: 'Hari ini, 15:45',
-                screenshots: {
-                    follow: createDummyScreenshot('Bukti Follow Akun', 'Akun Sudah Difollow', '#e11d48'),
-                    group: createDummyScreenshot('Bukti Grup & Saluran WA', 'Member Aktif Grup & Saluran', '#10b981'),
-                    invite: createDummyScreenshot('Bukti Ajak Teman', 'Share ke Grup Tongkrongan', '#f59e0b')
-                }
-            }
-        ];
-
         // --- 2. STATE APLIKASI ---
         let submissions = [];
         let settings = { ...defaultSettings };
         let branding = JSON.parse(JSON.stringify(defaultBranding));
         let winnersHistory = [];
-        let uploadedImages = {
-            follow: null,
-            group: null,
-            invite: null
-        };
-        let socialMissionStatus = {
-            tiktok: false,
-            grup: false,
-            saluran: false
-        };
+        let uploadedImages = { follow: null, group: null, invite: null };
+        let socialMissionStatus = { tiktok: false, grup: false, saluran: false };
         let currentAdminFilter = 'all';
         let isAdminAuthenticated = false;
         let lastGeneratedTicketId = '';
         let isDrawing = false;
 
+        function isCloudEnabled() {
+            return FIREBASE_DB_URL && !FIREBASE_DB_URL.includes('GANTI-DENGAN-URL-FIREBASE-ANDA');
+        }
+
+        async function syncCloudPut(nodePath, data) {
+            if (!isCloudEnabled()) return;
+            const cleanUrl = FIREBASE_DB_URL.replace(/\/$/, '');
+            await fetch(`${cleanUrl}/reviewbyfawaz/${nodePath}.json`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        }
+
+        async function syncCloudPost(nodePath, data) {
+            if (!isCloudEnabled()) return null;
+            const cleanUrl = FIREBASE_DB_URL.replace(/\/$/, '');
+            const res = await fetch(`${cleanUrl}/reviewbyfawaz/${nodePath}.json`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            return await res.json();
+        }
+
+        async function syncCloudDelete(nodePath) {
+            if (!isCloudEnabled()) return;
+            const cleanUrl = FIREBASE_DB_URL.replace(/\/$/, '');
+            await fetch(`${cleanUrl}/reviewbyfawaz/${nodePath}.json`, { method: 'DELETE' });
+        }
+
         // --- 3. INISIALISASI SAAT HALAMAN DIMUAT ---
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             initTheme();
-            loadDataFromStorage();
+            await loadAllData();
             applyBrandingToUI();
             applySettingsToUI();
             renderPublicReviews();
@@ -1290,10 +1196,9 @@
             lucide.createIcons();
         });
 
-        // Tema Gelap / Terang
         function initTheme() {
             const themeToggleBtn = document.getElementById('theme-toggle');
-            const savedTheme = localStorage.getItem('cinecoffee_theme');
+            const savedTheme = localStorage.getItem('reviewbyfawaz_theme');
             if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             }
@@ -1301,29 +1206,20 @@
             themeToggleBtn.addEventListener('click', () => {
                 document.documentElement.classList.toggle('dark');
                 const isDark = document.documentElement.classList.contains('dark');
-                localStorage.setItem('cinecoffee_theme', isDark ? 'dark' : 'light');
+                localStorage.setItem('reviewbyfawaz_theme', isDark ? 'dark' : 'light');
             });
         }
 
-        function loadDataFromStorage() {
+        async function loadAllData() {
             try {
                 const storedSubs = localStorage.getItem(STORAGE_KEY_SUBMISSIONS);
-                if (storedSubs) {
-                    submissions = JSON.parse(storedSubs);
-                } else {
-                    submissions = [...initialDummySubmissions];
-                    saveSubmissions();
-                }
+                if (storedSubs) submissions = JSON.parse(storedSubs);
 
                 const storedSettings = localStorage.getItem(STORAGE_KEY_SETTINGS);
-                if (storedSettings) {
-                    settings = { ...defaultSettings, ...JSON.parse(storedSettings) };
-                }
+                if (storedSettings) settings = { ...defaultSettings, ...JSON.parse(storedSettings) };
 
                 const storedWinners = localStorage.getItem(STORAGE_KEY_WINNERS);
-                if (storedWinners) {
-                    winnersHistory = JSON.parse(storedWinners);
-                }
+                if (storedWinners) winnersHistory = JSON.parse(storedWinners);
 
                 const storedBranding = localStorage.getItem(STORAGE_KEY_BRANDING);
                 if (storedBranding) {
@@ -1335,33 +1231,62 @@
                     };
                 }
             } catch (e) {
-                console.error('Gagal memuat data:', e);
-                submissions = [...initialDummySubmissions];
+                console.error('Gagal memuat cache lokal:', e);
+            }
+
+            if (!isCloudEnabled()) return;
+
+            try {
+                const cleanUrl = FIREBASE_DB_URL.replace(/\/$/, '');
+                const res = await fetch(`${cleanUrl}/reviewbyfawaz.json`);
+                if (!res.ok) throw new Error('Gagal membaca data cloud');
+                const cloud = await res.json();
+
+                if (cloud) {
+                    if (cloud.settings) {
+                        settings = { ...defaultSettings, ...cloud.settings };
+                        localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(settings));
+                    }
+                    if (cloud.branding) {
+                        branding = {
+                            ...defaultBranding,
+                            ...cloud.branding,
+                            logos: { ...defaultBranding.logos, ...(cloud.branding.logos || {}) }
+                        };
+                        localStorage.setItem(STORAGE_KEY_BRANDING, JSON.stringify(branding));
+                    }
+                    if (cloud.submissions) {
+                        submissions = Object.entries(cloud.submissions)
+                            .map(([fbKey, val]) => ({ fbKey, ...val }))
+                            .reverse();
+                        localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(submissions));
+                    } else {
+                        submissions = [];
+                    }
+                    if (cloud.winners) {
+                        winnersHistory = Object.values(cloud.winners).reverse();
+                        localStorage.setItem(STORAGE_KEY_WINNERS, JSON.stringify(winnersHistory));
+                    }
+                }
+            } catch (err) {
+                console.error('Error Cloud Sync:', err);
+                showToast('Gagal sinkronisasi ke Cloud. Periksa URL Firebase & Rules Test Mode.', 'error');
             }
         }
 
-        function saveBranding() {
+        async function saveBranding() {
             try {
                 localStorage.setItem(STORAGE_KEY_BRANDING, JSON.stringify(branding));
+                await syncCloudPut('branding', branding);
             } catch (e) {
-                showToast('Gagal menyimpan gambar logo karena memori browser penuh.', 'error');
+                showToast('Gagal menyimpan logo ke Cloud.', 'error');
             }
         }
 
-        function saveSubmissions() {
+        function saveSubmissionsLocal() {
             try {
                 localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(submissions));
-            } catch (e) {
-                showToast('Penyimpanan browser penuh. Coba gunakan gambar berukuran lebih kecil.', 'error');
-            }
-        }
-
-        function saveWinnersHistory() {
-            try {
-                localStorage.setItem(STORAGE_KEY_WINNERS, JSON.stringify(winnersHistory));
-            } catch (e) {
-                console.error('Gagal menyimpan riwayat pemenang:', e);
-            }
+            } catch (e) {}
         }
 
         // --- 4. INTERAKSI HALAMAN PESERTA (USER VIEW) ---
@@ -1391,7 +1316,7 @@
         }
 
         function copyInviteMessage() {
-            const inviteText = `Halo guys! Yuk ikutan Giveaway Undian Gratis di ${branding.brandTitle} 🎬☕💸\nHadiahnya ada Tiket CGV Gratis, F&B CGV, Kopi Kenangan, Saldo E-Wallet & Netflix Gratis!\n\nGabung Grup WA: ${settings.grupUrl}\nIkuti Saluran WA: ${settings.saluranUrl}\n\nDaftar & ambil nomor undianmu sekarang!`;
+            const inviteText = `Halo guys! Yuk ikutan Giveaway Undian Gratis di ${branding.brandTitle} 🎬☕💸\nHadiahnya ada Tiket CGV Gratis, F&B CGV, Kopi Kenangan, Saldo E-Wallet & Netflix Gratis!\n\nGabung Grup WA: ${settings.grupUrl}\nIkuti Saluran WA: ${settings.saluranUrl}\n\nDaftar & ambil nomor undianmu sekarang di: ${window.location.href}`;
 
             const tempTextarea = document.createElement('textarea');
             tempTextarea.value = inviteText;
@@ -1410,13 +1335,7 @@
 
         function setRating(starValue) {
             document.getElementById('input-rating').value = starValue;
-            const labels = {
-                1: '1/5 Kurang',
-                2: '2/5 Cukup',
-                3: '3/5 Bagus',
-                4: '4/5 Puas',
-                5: '5/5 Sangat Puas'
-            };
+            const labels = { 1: '1/5 Kurang', 2: '2/5 Cukup', 3: '3/5 Bagus', 4: '4/5 Puas', 5: '5/5 Sangat Puas' };
             document.getElementById('rating-text').textContent = labels[starValue] || '5/5 Sangat Puas';
 
             const buttons = document.querySelectorAll('#star-rating-container .star-btn');
@@ -1449,7 +1368,7 @@
                 const img = new Image();
                 img.onload = function() {
                     const canvas = document.createElement('canvas');
-                    const maxDim = 900;
+                    const maxDim = 750;
                     let width = img.width;
                     let height = img.height;
 
@@ -1468,7 +1387,7 @@
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
 
-                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.78);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.68);
                     uploadedImages[slotKey] = compressedDataUrl;
 
                     const previewContainer = document.getElementById(`preview-container-${slotKey}`);
@@ -1501,7 +1420,7 @@
             return newId;
         }
 
-        function handleFormSubmit(event) {
+        async function handleFormSubmit(event) {
             event.preventDefault();
 
             const name = document.getElementById('input-name').value.trim();
@@ -1519,9 +1438,13 @@
                 return;
             }
 
+            const submitBtn = document.getElementById('btn-submit-form');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Menyimpan & Menerbitkan No. Undian...</span>`;
+
             const raffleId = generateUniqueRaffleId();
             const now = new Date();
-            const timeStr = `Hari ini, ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+            const timeStr = `${now.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' })}, ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
             const newSubmission = {
                 id: raffleId,
@@ -1538,28 +1461,39 @@
                 }
             };
 
-            submissions.unshift(newSubmission);
-            saveSubmissions();
-            renderPublicReviews();
-            updatePublicStats();
+            try {
+                const cloudRes = await syncCloudPost('submissions', newSubmission);
+                if (cloudRes && cloudRes.name) {
+                    newSubmission.fbKey = cloudRes.name;
+                }
 
-            // Tampilkan Tiket Nomor Undian Digital
-            lastGeneratedTicketId = `#${raffleId}`;
-            document.getElementById('ticket-modal-number').textContent = `#${raffleId}`;
-            document.getElementById('ticket-modal-name').textContent = name;
-            document.getElementById('ticket-modal-phone').textContent = phone;
+                submissions.unshift(newSubmission);
+                saveSubmissionsLocal();
+                renderPublicReviews();
+                updatePublicStats();
 
-            const modal = document.getElementById('raffle-ticket-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            lucide.createIcons();
+                lastGeneratedTicketId = `#${raffleId}`;
+                document.getElementById('ticket-modal-number').textContent = `#${raffleId}`;
+                document.getElementById('ticket-modal-name').textContent = name;
+                document.getElementById('ticket-modal-phone').textContent = phone;
 
-            // Reset formulir & upload slot
-            document.getElementById('giveaway-form').reset();
-            setRating(5);
-            uploadedImages = { follow: null, group: null, invite: null };
-            resetUploadSlotsUI();
-            showToast(`Selamat! Nomor Undian kamu #${raffleId} berhasil diterbitkan!`, 'success');
+                const modal = document.getElementById('raffle-ticket-modal');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                lucide.createIcons();
+
+                document.getElementById('giveaway-form').reset();
+                setRating(5);
+                uploadedImages = { follow: null, group: null, invite: null };
+                resetUploadSlotsUI();
+                showToast(`Selamat! Nomor Undian kamu #${raffleId} berhasil diterbitkan!`, 'success');
+            } catch (err) {
+                showToast('Gagal menyimpan data ke server. Coba kirim ulang.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i data-lucide="ticket" class="w-5 h-5"></i> Kirim Review & Dapatkan Nomor Undian`;
+                lucide.createIcons();
+            }
         }
 
         function resetUploadSlotsUI() {
@@ -1640,9 +1574,7 @@
                                 ${verifiedBadge}
                             </div>
 
-                            <div class="flex items-center gap-1 mb-3">
-                                ${starsHtml}
-                            </div>
+                            <div class="flex items-center gap-1 mb-3">${starsHtml}</div>
 
                             <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                                 "${escapeHTML(item.review)}"
@@ -1708,12 +1640,13 @@
             document.getElementById('admin-pin-input').value = '';
         }
 
-        function verifyAdminPin(event) {
+        async function verifyAdminPin(event) {
             event.preventDefault();
             const pin = document.getElementById('admin-pin-input').value.trim();
             if (pin === ADMIN_PIN) {
                 isAdminAuthenticated = true;
                 closeAdminLoginModal();
+                await loadAllData();
                 switchView('admin');
                 showToast('Selamat datang di Dashboard Admin!', 'success');
             } else {
@@ -1757,47 +1690,20 @@
         }
 
         function switchAdminTab(tabName) {
-            const tabParticipants = document.getElementById('admin-tab-participants');
-            const tabRaffle = document.getElementById('admin-tab-raffle');
-            const tabBranding = document.getElementById('admin-tab-branding');
-            const tabSettings = document.getElementById('admin-tab-settings');
-
-            const btnParticipants = document.getElementById('tab-btn-participants');
-            const btnRaffle = document.getElementById('tab-btn-raffle');
-            const btnBranding = document.getElementById('tab-btn-branding');
-            const btnSettings = document.getElementById('tab-btn-settings');
-
+            const tabs = ['participants', 'raffle', 'branding', 'settings'];
             const activeClass = 'px-3.5 sm:px-4 py-3 text-xs sm:text-sm font-bold border-b-2 border-rose-600 text-rose-600 dark:text-rose-400 flex items-center gap-2 shrink-0';
             const inactiveClass = 'px-3.5 sm:px-4 py-3 text-xs sm:text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-2 shrink-0';
 
-            tabParticipants.classList.add('hidden');
-            tabRaffle.classList.add('hidden');
-            tabBranding.classList.add('hidden');
-            tabSettings.classList.add('hidden');
+            tabs.forEach(t => {
+                document.getElementById(`admin-tab-${t}`).classList.toggle('hidden', t !== tabName);
+                document.getElementById(`tab-btn-${t}`).className = t === tabName ? activeClass : inactiveClass;
+            });
 
-            btnParticipants.className = inactiveClass;
-            btnRaffle.className = inactiveClass;
-            btnBranding.className = inactiveClass;
-            btnSettings.className = inactiveClass;
-
-            if (tabName === 'participants') {
-                tabParticipants.classList.remove('hidden');
-                btnParticipants.className = activeClass;
-            } else if (tabName === 'raffle') {
-                tabRaffle.classList.remove('hidden');
-                btnRaffle.className = activeClass;
-                updateRafflePanel();
-            } else if (tabName === 'branding') {
-                tabBranding.classList.remove('hidden');
-                btnBranding.className = activeClass;
-                populateBrandingForm();
-            } else {
-                tabSettings.classList.remove('hidden');
-                btnSettings.className = activeClass;
-            }
+            if (tabName === 'raffle') updateRafflePanel();
+            if (tabName === 'branding') populateBrandingForm();
         }
 
-        // --- LOGIKA UPLOAD LOGO JUDUL & LOGO HADIAH ---
+        // --- LOGIKA UPLOAD LOGO JUDUL & LOGO HADIAH (CLOUD SYNC) ---
         function handleLogoUpload(event, logoKey) {
             const file = event.target.files[0];
             if (!file) return;
@@ -1810,9 +1716,9 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = new Image();
-                img.onload = function() {
+                img.onload = async function() {
                     const canvas = document.createElement('canvas');
-                    const maxDim = 400; // Ukuran optimal untuk logo agar ringan & tajam
+                    const maxDim = 320;
                     let width = img.width;
                     let height = img.height;
 
@@ -1831,51 +1737,50 @@
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
 
-                    // Simpan sebagai PNG agar transparansi logo tetap terjaga
                     const dataUrl = canvas.toDataURL('image/png');
                     branding.logos[logoKey] = dataUrl;
-                    saveBranding();
+                    await saveBranding();
                     applyBrandingToUI();
                     populateBrandingForm();
-                    showToast('Foto logo berhasil dipasang!', 'success');
+                    showToast('Foto logo berhasil dipasang & tersinkronisasi ke semua HP!', 'success');
                 };
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
 
-        function removeCustomLogo(logoKey) {
+        async function removeCustomLogo(logoKey) {
             branding.logos[logoKey] = null;
-            saveBranding();
+            await saveBranding();
             applyBrandingToUI();
             populateBrandingForm();
             showToast('Logo dikembalikan ke ikon bawaan.', 'info');
         }
 
-        function saveBrandText() {
+        async function saveBrandText() {
             const titleVal = document.getElementById('set-brand-title').value.trim();
             const subVal = document.getElementById('set-brand-subtitle').value.trim();
             branding.brandTitle = titleVal || defaultBranding.brandTitle;
             branding.brandSubtitle = subVal || defaultBranding.brandSubtitle;
-            saveBranding();
+            await saveBranding();
             applyBrandingToUI();
-            showToast('Judul & subjudul website berhasil diperbarui!', 'success');
+            showToast('Judul & subjudul website tersimpan permanen di semua perangkat!', 'success');
         }
 
-        function resetBrandingLogos() {
+        async function resetBrandingLogos() {
             branding = JSON.parse(JSON.stringify(defaultBranding));
-            saveBranding();
+            await saveBranding();
             applyBrandingToUI();
             populateBrandingForm();
             showToast('Semua logo judul dan logo hadiah dikembalikan ke default.', 'info');
         }
 
         function applyBrandingToUI() {
-            // Update teks judul header & footer
             document.getElementById('brand-title-text').textContent = branding.brandTitle;
             document.getElementById('brand-subtitle-text').textContent = branding.brandSubtitle;
+            document.getElementById('footer-brand-title').textContent = branding.brandTitle;
+            document.title = `${branding.brandTitle} — Giveaway & Review Hub`;
 
-            // Update logo di navbar & hero
             const navLogoContainer = document.getElementById('brand-logo-container');
             const heroLogoWrapper = document.getElementById('hero-logo-wrapper');
             const heroBrandImg = document.getElementById('hero-brand-img');
@@ -1891,7 +1796,6 @@
                 heroLogoWrapper.classList.remove('flex');
             }
 
-            // Update logo masing-masing 5 hadiah
             const prizeDefaults = {
                 cgvTicket: { icon: 'clapperboard', classes: 'w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform overflow-hidden border border-rose-500/15' },
                 cgvFnb: { icon: 'popcorn', classes: 'w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform overflow-hidden border border-orange-500/15' },
@@ -1990,7 +1894,7 @@
                             <i data-lucide="inbox" class="w-6 h-6"></i>
                         </div>
                         <h3 class="font-display font-bold text-base">Tidak ada data peserta ditemukan</h3>
-                        <p class="text-xs text-slate-500 mt-1">Coba ubah filter status atau kata kunci pencarian.</p>
+                        <p class="text-xs text-slate-500 mt-1">Peserta yang mendaftar dari HP manapun akan otomatis muncul di sini.</p>
                     </div>
                 `;
                 lucide.createIcons();
@@ -1998,15 +1902,11 @@
             }
 
             container.innerHTML = filtered.map(item => {
-                // Format nomor WhatsApp untuk link wa.me
                 let cleanPhone = item.phone.replace(/\D/g, '');
-                if (cleanPhone.startsWith('0')) {
-                    cleanPhone = '62' + cleanPhone.slice(1);
-                }
-                const waMessage = encodeURIComponent(`Halo ${item.name}! Data & review giveaway kamu dengan Nomor Undian *#${item.id}* telah kami verifikasi. Pantau terus pengundian pemenang di Grup WA & Saluran WA kami!`);
+                if (cleanPhone.startsWith('0')) cleanPhone = '62' + cleanPhone.slice(1);
+                const waMessage = encodeURIComponent(`Halo ${item.name}! Data & review giveaway kamu di ${branding.brandTitle} dengan Nomor Undian *#${item.id}* telah kami verifikasi. Pantau terus pengundian pemenang di Grup WA & Saluran WA kami!`);
                 const waUrl = `https://wa.me/${cleanPhone}?text=${waMessage}`;
 
-                // Status Badge
                 let statusBadge = '';
                 if (item.status === 'verified') {
                     statusBadge = `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Memenuhi Syarat</span>`;
@@ -2023,7 +1923,6 @@
                 return `
                     <div class="p-5 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all">
                         <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-                            <!-- Kolom Kiri: Nomor Undian, Identitas & Review -->
                             <div class="flex-1 space-y-3">
                                 <div class="flex flex-wrap items-center gap-2.5">
                                     <span class="font-mono text-xs font-extrabold px-3 py-1 rounded-xl bg-rose-600 text-white shadow-sm">
@@ -2052,7 +1951,6 @@
                                 </div>
                             </div>
 
-                            <!-- Kolom Tengah: 3 Thumbnail Bukti Screenshot -->
                             <div class="lg:w-80 shrink-0">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
                                     Bukti Screenshot (Klik untuk Perbesar)
@@ -2060,26 +1958,19 @@
                                 <div class="grid grid-cols-3 gap-2.5">
                                     <button type="button" onclick="openLightbox('${item.id}', 'follow')" class="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 aspect-[3/4] bg-slate-100 dark:bg-slate-950">
                                         <img src="${item.screenshots.follow}" alt="Bukti Follow" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">
-                                            1. Follow
-                                        </div>
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">1. Follow</div>
                                     </button>
                                     <button type="button" onclick="openLightbox('${item.id}', 'group')" class="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 aspect-[3/4] bg-slate-100 dark:bg-slate-950">
                                         <img src="${item.screenshots.group}" alt="Bukti Grup & Saluran WA" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">
-                                            2. Grup/Saluran WA
-                                        </div>
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">2. Grup/Saluran WA</div>
                                     </button>
                                     <button type="button" onclick="openLightbox('${item.id}', 'invite')" class="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 aspect-[3/4] bg-slate-100 dark:bg-slate-950">
                                         <img src="${item.screenshots.invite}" alt="Bukti Ajak Teman" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">
-                                            3. Ajak Teman
-                                        </div>
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/75 text-white text-[10px] font-semibold py-1 text-center">3. Ajak Teman</div>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Kolom Kanan: Tombol Aksi Verifikasi Admin -->
                             <div class="flex lg:flex-col justify-end gap-2 lg:w-44 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100 dark:border-slate-800">
                                 <button onclick="updateParticipantStatus('${item.id}', 'verified')" class="flex-1 lg:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-colors">
                                     <i data-lucide="check" class="w-4 h-4"></i>
@@ -2102,7 +1993,7 @@
             lucide.createIcons();
         }
 
-        // --- MESIN UNDIAN PEMENANG (ADMIN LUCKY DRAW) ---
+        // --- MESIN UNDIAN PEMENANG ---
         function updateRafflePanel() {
             const eligible = submissions.filter(s => s.status === 'verified');
             document.getElementById('raffle-eligible-count').textContent = eligible.length;
@@ -2135,7 +2026,7 @@
 
             let ticks = 0;
             const maxTicks = 28;
-            const interval = setInterval(() => {
+            const interval = setInterval(async () => {
                 const randomPreview = eligible[Math.floor(Math.random() * eligible.length)];
                 displayNumber.textContent = `#${randomPreview.id}`;
                 displayWinner.textContent = `Mengundi... (${randomPreview.name})`;
@@ -2149,26 +2040,26 @@
                     stageLabel.textContent = `🎉 PEMENANG ${prizeName.toUpperCase()} 🎉`;
                     displayWinner.innerHTML = `<span class="text-white font-bold text-lg">${escapeHTML(finalWinner.name)}</span> • <span class="text-emerald-400 font-mono">${escapeHTML(finalWinner.phone)}</span>`;
 
-                    // Siapkan tombol WhatsApp pemenang
                     let cleanPhone = finalWinner.phone.replace(/\D/g, '');
                     if (cleanPhone.startsWith('0')) cleanPhone = '62' + cleanPhone.slice(1);
-                    const msg = encodeURIComponent(`Selamat ${finalWinner.name}! Nomor Undian kamu *#${finalWinner.id}* terpilih sebagai pemenang hadiah *${prizeName}* di CineCoffee Rewards!`);
+                    const msg = encodeURIComponent(`Selamat ${finalWinner.name}! Nomor Undian kamu *#${finalWinner.id}* terpilih sebagai pemenang hadiah *${prizeName}* di ${branding.brandTitle}!`);
                     document.getElementById('raffle-wa-btn').href = `https://wa.me/${cleanPhone}?text=${msg}`;
 
                     winnerActions.classList.remove('hidden');
                     winnerActions.classList.add('flex');
 
-                    // Simpan ke riwayat pemenang
                     const now = new Date();
                     const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-                    winnersHistory.unshift({
+                    const winObj = {
                         raffleId: finalWinner.id,
                         name: finalWinner.name,
                         phone: finalWinner.phone,
                         prize: prizeName,
                         drawnAt: timeStr
-                    });
-                    saveWinnersHistory();
+                    };
+                    winnersHistory.unshift(winObj);
+                    localStorage.setItem(STORAGE_KEY_WINNERS, JSON.stringify(winnersHistory));
+                    await syncCloudPost('winners', winObj);
                     renderWinnersHistory();
 
                     isDrawing = false;
@@ -2198,36 +2089,43 @@
             `).join('');
         }
 
-        function clearRaffleWinners() {
+        async function clearRaffleWinners() {
             winnersHistory = [];
-            saveWinnersHistory();
+            localStorage.setItem(STORAGE_KEY_WINNERS, JSON.stringify(winnersHistory));
+            await syncCloudDelete('winners');
             renderWinnersHistory();
             showToast('Riwayat pemenang undian telah dibersihkan.', 'info');
         }
 
-        function updateParticipantStatus(id, newStatus) {
+        async function updateParticipantStatus(id, newStatus) {
             const idx = submissions.findIndex(s => s.id === id);
             if (idx !== -1) {
                 submissions[idx].status = newStatus;
-                saveSubmissions();
+                saveSubmissionsLocal();
+                if (submissions[idx].fbKey) {
+                    await syncCloudPut(`submissions/${submissions[idx].fbKey}/status`, newStatus);
+                }
                 renderAdminDashboard();
                 const statusLabel = newStatus === 'verified' ? 'Memenuhi Syarat (Terverifikasi)' : 'Ditolak';
                 showToast(`Status peserta ${submissions[idx].name} diubah menjadi: ${statusLabel}`, newStatus === 'verified' ? 'success' : 'info');
             }
         }
 
-        function deleteParticipant(id) {
+        async function deleteParticipant(id) {
             const idx = submissions.findIndex(s => s.id === id);
             if (idx !== -1) {
                 const removedName = submissions[idx].name;
+                const fbKey = submissions[idx].fbKey;
                 submissions.splice(idx, 1);
-                saveSubmissions();
+                saveSubmissionsLocal();
+                if (fbKey) {
+                    await syncCloudDelete(`submissions/${fbKey}`);
+                }
                 renderAdminDashboard();
                 showToast(`Data peserta "${removedName}" telah dihapus.`, 'info');
             }
         }
 
-        // Lightbox Preview Screenshot
         function openLightbox(id, type) {
             const item = submissions.find(s => s.id === id);
             if (!item) return;
@@ -2253,7 +2151,6 @@
             modal.classList.remove('flex');
         }
 
-        // Export CSV Data Pemenang & Peserta
         function exportCSV() {
             if (submissions.length === 0) {
                 showToast('Tidak ada data untuk diunduh.', 'error');
@@ -2275,7 +2172,7 @@
             const encodedUri = encodeURI(csvContent);
             const link = document.createElement('a');
             link.setAttribute('href', encodedUri);
-            link.setAttribute('download', `data_nomor_undian_giveaway_${new Date().toISOString().slice(0, 10)}.csv`);
+            link.setAttribute('download', `data_nomor_undian_reviewbyfawaz_${new Date().toISOString().slice(0, 10)}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -2283,7 +2180,7 @@
             showToast('File CSV data nomor undian peserta berhasil diunduh!', 'success');
         }
 
-        // --- 7. PENGATURAN LINK SYARAT (ADMIN) ---
+        // --- 7. PENGATURAN LINK SYARAT (ADMIN CLOUD SYNC) ---
         function applySettingsToUI() {
             document.getElementById('label-tiktok').textContent = settings.tiktokLabel;
             document.getElementById('link-tiktok').href = settings.tiktokUrl;
@@ -2306,7 +2203,7 @@
             document.getElementById('set-saluran-url').value = settings.saluranUrl;
         }
 
-        function saveLinkSettings(event) {
+        async function saveLinkSettings(event) {
             event.preventDefault();
             settings = {
                 tiktokLabel: document.getElementById('set-tiktok-label').value.trim(),
@@ -2317,19 +2214,21 @@
                 saluranUrl: document.getElementById('set-saluran-url').value.trim()
             };
             localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(settings));
+            await syncCloudPut('settings', settings);
             applySettingsToUI();
-            showToast('Pengaturan link TikTok, grup & saluran WA berhasil diperbarui!', 'success');
+            showToast('Pengaturan link TikTok, grup & saluran WA tersimpan di Cloud!', 'success');
         }
 
-        function resetDefaultSettings() {
+        async function resetDefaultSettings() {
             settings = { ...defaultSettings };
             localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(settings));
+            await syncCloudPut('settings', settings);
             populateSettingsForm();
             applySettingsToUI();
             showToast('Pengaturan dikembalikan ke default.', 'info');
         }
 
-        // --- 8. UTILITIES (TOAST NOTIFICATION & XSS SANITIZER) ---
+        // --- 8. UTILITIES ---
         function showToast(message, type = 'info') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
